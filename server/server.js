@@ -1,6 +1,7 @@
 const fs = require("fs");
 const express = require("express");
 const uuid = require("uuid");
+const cors = require("cors");
 
 const HOST = "0.0.0.0";
 const PORT = 8090;
@@ -8,6 +9,11 @@ const PORT = 8090;
 const server = express();
 
 server.use(express.text());
+server.use(
+    cors({
+        origin: "http://localhost:8080",
+    }),
+);
 
 function generatePostId() {
     return uuid.v4();
