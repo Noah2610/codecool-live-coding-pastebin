@@ -24,6 +24,12 @@ function savePost(id, body) {
     fs.writeFileSync(filePath, body, "utf8");
 }
 
+function getPost(id) {
+    const filePath = `posts/${id}.txt`;
+    return fs.readFileSync(filePath, "utf8");
+    // TODO: catch error, if file doesn't exist!
+}
+
 server.get("/", (req, res) => {
     res.send("Server is running!");
 });
@@ -35,6 +41,19 @@ server.post("/post", (req, res) => {
     savePost(postId, postBody);
 
     res.send(postId);
+});
+
+// GET /post/:id
+server.get("/post/:id", (req, res) => {
+    // Get ID
+    const id = req.params.id;
+
+    // Using ID, read post
+    const body = getPost(id);
+
+    console.log(body);
+
+    // Respond with post content
 });
 
 server.listen(PORT, HOST, () => {
