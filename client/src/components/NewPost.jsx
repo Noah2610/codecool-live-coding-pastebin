@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function App() {
+export default function NewPost() {
     const [postBody, setPostBody] = useState("");
 
     function onSubmit(event) {
@@ -22,5 +22,3 @@ function App() {
         </form>
     );
 }
-
-export default App;
