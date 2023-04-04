@@ -27,3 +27,11 @@ On submit => redirect to new post's page. (`/p/:id`)
 
 ### `/p/:postId`
 URL that shows associated `:postId`'s post body text.
+
+## Features TODO
+- posts index page
+- filter posts
+- copy to clipboard button
+- delete stale posts after a while
+- add database
+- styling
