@@ -28,10 +28,13 @@ export default function ViewPost() {
 
     return (
         <>
-            <textarea ref={textareaRef} readOnly>
-                {postBody}
-            </textarea>
-            <button onClick={onCopy}>Copy</button>
+            <h1>View Post</h1>
+            <div className="form-vertical">
+                <textarea ref={textareaRef} readOnly>
+                    {postBody}
+                </textarea>
+                <button onClick={onCopy}>Copy</button>
+            </div>
         </>
     );
 }

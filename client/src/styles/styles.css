@@ -1,0 +1,15 @@
+body {
+    font-size: 24px;
+    margin: 4rem;
+}
+
+.page {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

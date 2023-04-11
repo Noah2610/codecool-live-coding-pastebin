@@ -21,7 +21,9 @@ export default function NewPost() {
 
     return (
         <>
-            <form action="#" onSubmit={onSubmit}>
+            <h1>New Post</h1>
+
+            <form action="#" onSubmit={onSubmit} className="form-vertical">
                 <textarea
                     value={postBody}
                     onChange={(event) => setPostBody(event.target.value)}
