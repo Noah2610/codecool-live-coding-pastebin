@@ -1,10 +1,21 @@
+require("dotenv").config({
+    path: "../.env",
+});
+
 const fs = require("fs");
 const express = require("express");
 const uuid = require("uuid");
 const cors = require("cors");
 
-const HOST = "0.0.0.0";
-const PORT = 8090;
+const HOST = process.env.SERVER_HOST;
+const PORT = process.env.SERVER_PORT;
+
+if (!HOST || !PORT) {
+    console.error(
+        "[Error] Please set the environment variables in `.env`, see `example.env` for reference",
+    );
+    process.exit(1);
+}
 
 const server = express();
 
