@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { API_URL } from "../api";
 
 export default function ViewPost() {
     const { postId } = useParams();
@@ -7,7 +8,7 @@ export default function ViewPost() {
     const textareaRef = useRef();
 
     async function fetchPost() {
-        const response = await fetch(`http://0.0.0.0:8090/post/${postId}`);
+        const response = await fetch(`${API_URL}/post/${postId}`);
         const postBody = await response.text();
         setPostBody(postBody);
     }

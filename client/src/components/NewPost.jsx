@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../api";
 
 export default function NewPost() {
     const [postBody, setPostBody] = useState("");
@@ -7,7 +8,7 @@ export default function NewPost() {
     async function onSubmit(event) {
         event.preventDefault();
 
-        const response = await fetch("http://0.0.0.0:8090/post", {
+        const response = await fetch(`${API_URL}/post`, {
             method: "POST",
             body: postBody,
         });
